@@ -5,7 +5,7 @@
 set -eu  # Keluar segera jika perintah gagal atau variabel tidak disetel
 
 # --- KONFIGURASI PENGGUNA ---
-LIVE_NAME="LFS_Live"
+LIVE_NAME="leakos"
 LFS_SOURCE_ROOT="/"
 # Partisi yang akan dicari oleh script 'init' saat booting.
 LIVE_BUILD_DIR="$(find /mnt/liveiso/ -type d -name "${LIVE_NAME}-build*" | head -n1)
