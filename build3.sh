@@ -8,13 +8,14 @@ set -eu  # Keluar segera jika perintah gagal atau variabel tidak disetel
 LIVE_NAME="LFS_Live"
 LFS_SOURCE_ROOT="/"
 # Partisi yang akan dicari oleh script 'init' saat booting.
+LIVE_BUILD_DIR="$(find /mnt/liveiso/ -type d -name "${LIVE_NAME}-build*" | head -n1)
 LIVE_PARTITION_DEV="/dev/sdb1"
 ISO_OUTPUT_DIR="/mnt/lfs_live_iso"
 ISO_NAME="${LIVE_NAME}-$(date +%Y%m%d).iso"
 SQUASHFS_FILE="rootfs.squashfs"
 
 # --- TENTUKAN KERJA ---
-WORKDIR="${ISO_OUTPUT_DIR}/build_temp_$$"
+WORKDIR="${LIVE_BUILD_DIR}"
 FINAL_ISO_PATH="${ISO_OUTPUT_DIR}/${ISO_NAME}"
 KERNEL_VERSION=$(uname -r)
 
